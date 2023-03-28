@@ -1,0 +1,35 @@
+<form action="" class="container">
+  <div class="col-12 text-center">
+    <select
+      class="form-select form-select-lg mb-3"
+      aria-label=".form-select-lg example"
+    >
+      <option selected>Selecione uma peça</option>
+      <option [value]="estoque[0].descricao">{{ estoque[0].descricao }}</option>
+      <option [value]="estoque[1].descricao">{{ estoque[1].descricao }}</option>
+      <option [value]="estoque[2].descricao">{{ estoque[2].descricao }}</option>
+      <option [value]="estoque[3].descricao">{{ estoque[3].descricao }}</option>
+    </select>
+  </div>
+  <div class="col-12">
+    <input
+      class="form-control form-control-lg"
+      type="number"
+      id="estoque"
+      name="estoque"
+      [(ngModel)]="estoque[2].qtde_disponivel"
+    />
+  </div>
+  <div class="py-3 text-center">
+    <h5 class="text-light">
+      Quantidade Atual : {{ estoque[2].qtde_disponivel }}
+    </h5>
+  </div>
+  <div class="row justify-content-around">
+    <button (click)="adicionarEstoque()">(+) Adicionar</button>
+    <button (click)="removerEstoque()">(-) Remover</button>
+  </div>
+</form>
+<div class="container py-3 text-">
+  <button routerLink="/home">Cancelar</button>
+</div>
